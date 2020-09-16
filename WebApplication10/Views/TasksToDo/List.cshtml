@@ -4,3 +4,80 @@
     ViewData["Title"] = "List";
 }
 
+<h1>List of tasks</h1>
+
+<h3>List of finished tasks</h3>
+
+<table class="table">
+    <tr>
+        <th>Reden Broj</th>
+        <th>Desctiption</th>
+        <th>StartDate</th>
+        <th>EndDate</th>
+        <th>IsFinished</th>
+        <th>Number of hours</th>
+    </tr>
+
+    @foreach (var item in Model.Where(x => x.IsFinished == true))
+    {
+        <tr style="background-color: greenyellow">
+            <td>@item.RedenBroj</td>
+            <td>@item.Description</td>
+            <td>@item.StartDate</td>
+            <td>@item.EndDate</td>
+            <td>@item.IsFinished</td>
+            <td>@item.NumberOfHours</td>
+        </tr>
+    }
+</table>
+
+
+<h4>The total hours: @FindSum(Model)</h4>
+<h3>List of unfinished tasks</h3>
+
+<table class="table">
+    <tr>
+        <th>Reden Broj</th>
+        <th>Desctiption</th>
+        <th>StartDate</th>
+        <th>EndDate</th>
+        <th>IsFinished</th>
+    </tr>
+
+    @foreach (var item in Model.Where(x => x.IsFinished == false))
+    {
+        <tr style="background-color: red">
+            <td>@item.RedenBroj</td>
+            <td>@item.Description</td>
+            <td>@item.StartDate</td>
+            <td>@item.EndDate</td>
+            <td>@item.IsFinished</td>
+        </tr>
+    }
+</table>
+
+
+
+
+
+@functions
+{
+
+    public int Sum(int n1, int n2)
+    {
+        return (n1 + n2) + 2;
+    }
+
+
+
+    public string SubstringOfString(string input, int numberOfCharactersToTake)
+    {
+        return input.Substring(0, numberOfCharactersToTake);
+    }
+
+
+    public int? FindSum(List<TasksToDo> list)
+    {
+        return list.Where(a => a.IsFinished == true).Sum(b => b.NumberOfHours);
+    }
+}
