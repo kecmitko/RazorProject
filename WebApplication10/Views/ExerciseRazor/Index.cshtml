@@ -1,0 +1,48 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+@{
+
+    var name = "Hello Name";
+    <p>This is some name1234 @name</p>
+
+    var number1 = 5;
+    var number2 = 5;
+}
+
+
+<p>@(number1 + number2)</p>
+
+
+<p>@DateTime.Now</p>
+
+
+@*<h1>@ViewData["Name"]</h1>*@
+
+
+@if (@number1 == 5)
+{
+    <p>This is number 5</p>
+}
+else
+{
+    <p>This is not number 5</p>
+}
+
+
+@for (int i = 0; i < 10; i++)
+{
+    @if (i % 2 == 0)
+    {
+        <p style="background-color: red">@i</p>
+    }
+    else
+    {
+        <p style="background-color: gray">@i</p>
+    }
+
+}
