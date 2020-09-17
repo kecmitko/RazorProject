@@ -1,0 +1,55 @@
+﻿@model WebApplication10.Models.TasksToDo
+
+@{
+    ViewData["Title"] = "CreateForm";
+}
+
+<h1>CreateForm</h1>
+
+<h4>TasksToDo</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create" method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="RedenBroj" class="control-label"></label>
+                <input asp-for="RedenBroj" class="form-control" />
+                <span asp-validation-for="RedenBroj" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Description" class="control-label"></label>
+                <input asp-for="Description" class="form-control" />
+                <span asp-validation-for="Description" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="StartDate" class="control-label"></label>
+                <input asp-for="StartDate" class="form-control" />
+                <span asp-validation-for="StartDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="EndDate" class="control-label"></label>
+                <input asp-for="EndDate" class="form-control" />
+                <span asp-validation-for="EndDate" class="text-danger"></span>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="IsFinished" /> @Html.DisplayNameFor(model => model.IsFinished)
+                </label>
+            </div>
+            <div class="form-group">
+                <label asp-for="NumberOfHours" class="control-label"></label>
+                <input asp-for="NumberOfHours" class="form-control" />
+                <span asp-validation-for="NumberOfHours" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+

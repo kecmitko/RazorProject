@@ -21,20 +21,5 @@ namespace WebApplication10.Models
 
 
 
-    public class Both
-    {
-        public Person Person { get; set; }
-        public Address Address { get; set; }
-    }
-      
-    public class Person
-    {
-        public string Name { get; set; }
-    }
-
-
-    public class Address
-    {
-        public string State { get; set; }
-    }
+ 
 }

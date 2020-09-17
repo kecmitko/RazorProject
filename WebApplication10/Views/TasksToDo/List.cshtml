@@ -6,6 +6,8 @@
 
 <h1>List of tasks</h1>
 
+<a asp-controller="TasksToDo" asp-action="CreateForm">Create New</a>
+
 <h3>List of finished tasks</h3>
 
 <table class="table">
@@ -16,6 +18,9 @@
         <th>EndDate</th>
         <th>IsFinished</th>
         <th>Number of hours</th>
+        <th>Delete</th>
+        <th>Details</th>
+        <th>Edit</th>
     </tr>
 
     @foreach (var item in Model.Where(x => x.IsFinished == true))
@@ -27,6 +32,9 @@
             <td>@item.EndDate</td>
             <td>@item.IsFinished</td>
             <td>@item.NumberOfHours</td>
+            <td><a asp-controller="TasksToDo" asp-action="Delete" asp-route-redenbroj="@item.RedenBroj">Delete</a></td>
+            <td><a asp-controller="TasksToDo" asp-action="Details" asp-route-redenbroj="@item.RedenBroj">Details</a></td>
+            <td><a asp-controller="TasksToDo" asp-action="EditForm" asp-route-redenbroj="@item.RedenBroj">Edit</a></td>
         </tr>
     }
 </table>
@@ -42,17 +50,23 @@
         <th>StartDate</th>
         <th>EndDate</th>
         <th>IsFinished</th>
+        <th>Delete</th>
+        <th>Details</th>
+        <th>Edit</th>
     </tr>
 
     @foreach (var item in Model.Where(x => x.IsFinished == false))
     {
-        <tr style="background-color: red">
-            <td>@item.RedenBroj</td>
-            <td>@item.Description</td>
-            <td>@item.StartDate</td>
-            <td>@item.EndDate</td>
-            <td>@item.IsFinished</td>
-        </tr>
+<tr style="background-color: red">
+    <td>@item.RedenBroj</td>
+    <td>@item.Description</td>
+    <td>@item.StartDate</td>
+    <td>@item.EndDate</td>
+    <td>@item.IsFinished</td>
+    <td><a asp-controller="TasksToDo" asp-action="Delete" asp-route-redenbroj="@item.RedenBroj">Delete</a></td>
+    <td><a asp-controller="TasksToDo" asp-action="Details" asp-route-redenbroj="@item.RedenBroj">Details</a></td>
+    <td><a asp-controller="TasksToDo" asp-action="EditForm" asp-route-redenbroj="@item.RedenBroj">Edit</a></td>
+</tr>
     }
 </table>
 

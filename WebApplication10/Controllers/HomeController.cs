@@ -39,7 +39,7 @@ namespace WebApplication10.Controllers
             return View();
         }
 
-        public IActionResult Privacy()
+        public IActionResult Privacy(int number, string name, bool isEven)
         {
             return View("Privacy");
         }
@@ -48,6 +48,12 @@ namespace WebApplication10.Controllers
         public IActionResult Error()
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+        }
+
+
+        public IActionResult Test()
+        {
+            return View();
         }
     }
 }

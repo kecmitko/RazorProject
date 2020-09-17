@@ -28,5 +28,60 @@ namespace WebApplication10.Controllers
             
             return View(_tasks);
         }
+
+
+        public IActionResult  Delete(int redenbroj)
+        {
+            var tasks = _tasks.Where(a => a.RedenBroj != redenbroj).ToList();
+            return View("List", tasks);
+        }
+
+
+        public IActionResult Details(int redenbroj)
+        {
+            var task = _tasks.Where(a => a.RedenBroj == redenbroj).FirstOrDefault();
+            return View(task);
+        }
+
+        // this is action method that will return view with form 
+        public IActionResult CreateForm()
+        {
+            return View();
+        }
+
+
+        [HttpPost]
+        public IActionResult Create(TasksToDo task)
+        {
+             _tasks.Add(task);
+            return View("List", _tasks);
+        }
+
+
+
+        public IActionResult EditForm(int redenbroj)
+        {
+            var item = _tasks.Where(a => a.RedenBroj == redenbroj).FirstOrDefault();
+            return View(item);
+        }
+
+
+        [HttpPost]
+        public IActionResult Edit(TasksToDo task)
+        {
+            foreach (var item in _tasks)
+            {
+                if (item.RedenBroj == task.RedenBroj)
+                {
+                    item.Description = task.Description;
+                    item.StartDate = task.StartDate;
+                    item.EndDate = task.EndDate;
+                    item.IsFinished = task.IsFinished;
+                    item.NumberOfHours = task.NumberOfHours;
+                }
+            }
+            return View("List", _tasks);
+        }
+
     }
 }

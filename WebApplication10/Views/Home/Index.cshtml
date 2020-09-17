@@ -1,4 +1,4 @@
-﻿@model Both
+﻿
 
 @{
     ViewData["Title"] = "Home Page";
@@ -10,9 +10,25 @@
 </div>
 
 
- 
-  
+@{
+    var parms = new Dictionary<string, string>
+{
+         { "number", "11" },
+         { "name", "Jane" },
+         { "isEven","true" }
+     };
+}
 
-@Model.Person.Name
-@Model.Address.State
-    
+<a asp-controller="Home" asp-action="Privacy" asp-all-route-data="@parms">Privacy link</a>
+
+</br></br>
+Cached:<cache>@DateTime.Now</cache>
+</br>
+Not cahed: @DateTime.Now
+
+
+<form asp-controller="Home" asp-action="Test" method="post">
+    Email:  <input type="text" /> <br />
+    Password: <input type="password" /><br />
+    <button type="submit">Register</button>
+</form>

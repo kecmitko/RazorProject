@@ -1,0 +1,18 @@
+﻿@model  Person
+@{
+    ViewData["Title"] = "Test";
+}
+
+<h1>Test</h1>
+
+@{
+    var person = new Person {};
+    person.Name = "TestName";
+    person.Surname = "TestSurname";
+}
+
+<form asp-controller="Home" asp-action="Test" method="post">
+    Name:  <input asp-for="@person.Name" type="text" /> <br />
+    Surname: <input asp-for="@person.Surname" type="text" /><br />
+    <button type="submit">Register</button>
+</form>
