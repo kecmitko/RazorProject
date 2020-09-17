@@ -14,5 +14,27 @@ namespace WebApplication10.Models
         public bool IsFinished { get; set; }
 
         public int?  NumberOfHours { get; set; }
+
+
+
+    }
+
+
+
+    public class Both
+    {
+        public Person Person { get; set; }
+        public Address Address { get; set; }
+    }
+      
+    public class Person
+    {
+        public string Name { get; set; }
+    }
+
+
+    public class Address
+    {
+        public string State { get; set; }
     }
 }
