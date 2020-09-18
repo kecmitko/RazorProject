@@ -11,6 +11,7 @@ namespace WebApplication10.Models
         public int RedenBroj { get; set; }
 
 
+        [StringLength(100)]
         [Required]
         public string Description { get; set; }
         public DateTime StartDate { get; set; }
@@ -25,8 +26,8 @@ namespace WebApplication10.Models
 
 
         [CreditCard]
-        [Required]
-        public int? Card { get; set; }
+        [Required(ErrorMessage = "Poleto e zadolzitelno!!!")]
+        public string Card { get; set; }
 
     }
 
