@@ -43,6 +43,16 @@
                 <span asp-validation-for="NumberOfHours" class="text-danger"></span>
             </div>
             <div class="form-group">
+                <label asp-for="Email" class="control-label"></label>
+                <input asp-for="Email" class="form-control" />
+                <span asp-validation-for="Email" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Card" class="control-label"></label>
+                <input asp-for="Card" class="form-control" />
+                <span asp-validation-for="Card" class="text-danger"></span>
+            </div>
+            <div class="form-group">
                 <input type="submit" value="Create" class="btn btn-primary" />
             </div>
         </form>
@@ -53,3 +63,6 @@
     <a asp-action="Index">Back to List</a>
 </div>
 
+@section Scripts {
+        @{Html.RenderPartial("_ValidationScriptsPartial");}
+    }

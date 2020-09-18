@@ -9,6 +9,8 @@ namespace WebApplication10.Models
     public class TasksToDo
     {
         public int RedenBroj { get; set; }
+
+
         [Required]
         public string Description { get; set; }
         public DateTime StartDate { get; set; }
@@ -17,11 +19,18 @@ namespace WebApplication10.Models
 
         public int?  NumberOfHours { get; set; }
 
+        [EmailAddress]
+        [Required]
+        public string Email { get; set; }
 
+
+        [CreditCard]
+        [Required]
+        public int? Card { get; set; }
 
     }
 
 
 
- 
+
 }
