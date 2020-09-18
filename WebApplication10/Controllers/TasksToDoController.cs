@@ -73,9 +73,15 @@ namespace WebApplication10.Controllers
         public IActionResult Create(TasksToDo task)
         {
             // logika za dodavanje na nov task vo listata
-            _tasks.Add(task);
-            return View("List", _tasks);
+            if (ModelState.IsValid)
+            {
+                _tasks.Add(task);
+                return View("List", _tasks);
+            }
+
+            return View("CreateForm", task);
         }
+
 
 
         // Istoto kako za Create, so edna minimalna razlika, formata za edit e popolneta so podatoci od selektiraniot task. 
@@ -103,6 +109,17 @@ namespace WebApplication10.Controllers
                 }
             }
             return View("List", _tasks);
+        }
+
+        [AcceptVerbs("GET", "POST")]
+        public IActionResult VerifyEmail(string email)
+        {
+            if (email == "test@gmail.com")
+            {
+                return Json($"Email {email} is already in use.");
+            }
+
+            return Json(true);
         }
 
     }
