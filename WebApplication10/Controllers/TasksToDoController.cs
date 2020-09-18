@@ -8,7 +8,8 @@ using WebApplication10.Models;
 
 namespace WebApplication10.Controllers
 {
-    //Nova Proba 1.1
+    //PROBA GITHUB
+    // Viktor Vasilevski
     public class TasksToDoController : Controller
     {
         List<TasksToDo> _tasks = new List<TasksToDo>{
