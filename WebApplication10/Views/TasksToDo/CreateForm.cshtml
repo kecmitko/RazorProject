@@ -36,6 +36,7 @@
                 <label class="form-check-label">
                     <input class="form-check-input" asp-for="IsFinished" /> @Html.DisplayNameFor(model => model.IsFinished)
                 </label>
+                <span asp-validation-for="IsFinished" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="NumberOfHours" class="control-label"></label>
@@ -52,6 +53,20 @@
                 <input asp-for="Card" class="form-control" />
                 <span asp-validation-for="Card" class="text-danger"></span>
             </div>
+            
+            <div class="form-group">
+                <label asp-for="Password" class="control-label"></label>
+                <input asp-for="Password" class="form-control" />
+                <span asp-validation-for="Password" class="text-danger"></span>
+            </div>
+            
+            <div class="form-group">
+                <label asp-for="ConfirmPassword" class="control-label"></label>
+                <input asp-for="ConfirmPassword" class="form-control" />
+                <span asp-validation-for="ConfirmPassword" class="text-danger"></span>
+            </div>
+            
+
             <div class="form-group">
                 <input type="submit" value="Create" class="btn btn-primary" />
             </div>
