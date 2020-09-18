@@ -9,7 +9,10 @@ using WebApplication10.Models;
 namespace WebApplication10.Controllers
 {
     //PROBA GITHUB
-    //**ivana**
+<<<<<<< HEAD
+=======
+    // Viktor Vasilevski
+>>>>>>> dc1006386ca5311cae42f26ed065a225d2a81ee0
     public class TasksToDoController : Controller
     {
         List<TasksToDo> _tasks = new List<TasksToDo>{
