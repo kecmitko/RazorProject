@@ -9,6 +9,7 @@ using WebApplication10.Models;
 namespace WebApplication10.Controllers
 {
     //PROBA GITHUB
+    // Viktor Vasilevski
     public class TasksToDoController : Controller
     {
         List<TasksToDo> _tasks = new List<TasksToDo>{
@@ -23,7 +24,7 @@ namespace WebApplication10.Controllers
             return View();
         }
 
-
+        //How much wood would a woodchuck chuck if a woodchuck could chuck wood?
 
 
         // se koristi za da prikaze lista na taskovi. Vo view - to ima kopce 
