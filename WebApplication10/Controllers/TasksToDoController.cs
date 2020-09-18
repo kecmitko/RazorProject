@@ -72,9 +72,18 @@ namespace WebApplication10.Controllers
         [HttpPost]
         public IActionResult Create(TasksToDo task)
         {
+            if (ModelState.IsValid)
+            {
+
+            
             // logika za dodavanje na nov task vo listata
             _tasks.Add(task);
             return View("List", _tasks);
+            }
+            else
+            {
+                return View("CreateForm", task);
+            }
         }
 
 
@@ -103,6 +112,18 @@ namespace WebApplication10.Controllers
                 }
             }
             return View("List", _tasks);
+        }
+
+
+        [AcceptVerbs("GET", "POST")]
+        public IActionResult VerifyEmail(string email)
+        {
+            if (email=="test@gmail.com")
+            {
+                return Json($"Email {email} is already in use.");
+            }
+
+            return Json(true);
         }
 
     }
