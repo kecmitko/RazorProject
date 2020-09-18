@@ -74,8 +74,13 @@ namespace WebApplication10.Controllers
         public IActionResult Create(TasksToDo task)
         {
             // logika za dodavanje na nov task vo listata
-            _tasks.Add(task);
-            return View("List", _tasks);
+            if (ModelState.IsValid)
+            {
+                _tasks.Add(task);
+                return View("List", _tasks);
+            }
+            return View("CreateForm", task);
+
         }
 
 
