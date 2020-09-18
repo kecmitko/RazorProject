@@ -111,5 +111,16 @@ namespace WebApplication10.Controllers
             return View("List", _tasks);
         }
 
+        [AcceptVerbs("GET", "POST")]
+        public IActionResult VerifyEmail(string email)
+        {
+            if (email == "test@gmail.com")
+            {
+                return Json($"Email {email} is already in use.");
+            }
+
+            return Json(true);
+        }
+
     }
 }
