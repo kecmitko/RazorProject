@@ -73,6 +73,9 @@ namespace WebApplication10.Models
 
         
         public string InputValidator { get; set; }
+        [ImNotARobot]
+        public int InputValidator { get; set; }
+
     }
 
 
