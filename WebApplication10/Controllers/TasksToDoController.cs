@@ -8,6 +8,8 @@ using WebApplication10.Models;
 
 namespace WebApplication10.Controllers
 {
+    //PROBA GITHUB
+    // Viktor Vasilevski
     public class TasksToDoController : Controller
     {
         List<TasksToDo> _tasks = new List<TasksToDo>{
@@ -79,9 +81,9 @@ namespace WebApplication10.Controllers
                 return View("List", _tasks);
             }
 
-            return View("CreateForm", task);
-        }
+            return  View("CreateForm", task);
 
+        }
 
 
         // Istoto kako za Create, so edna minimalna razlika, formata za edit e popolneta so podatoci od selektiraniot task. 
@@ -116,7 +118,8 @@ namespace WebApplication10.Controllers
         {
             if (email == "test@gmail.com")
             {
-                return Json($"Email {email} is already in use.");
+                return Json( $@"Email ""{email}"" is 
+                                   already in use.");
             }
 
             return Json(true);
