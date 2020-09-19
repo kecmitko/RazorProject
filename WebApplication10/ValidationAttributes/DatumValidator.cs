@@ -10,7 +10,7 @@ namespace WebApplication10.ValidationAttributes
     public class DatumValidator : ValidationAttribute
     {
         public string GetErrorMessage1() =>
-            $"Vnesi Datum.";
+            $"Please enter end date";
 
 
         protected override ValidationResult IsValid(object value,

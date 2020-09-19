@@ -7,20 +7,20 @@ using WebApplication10.Models;
 
 namespace WebApplication10.ValidationAttributes
 {
- 
-    public class FinishedValidator : ValidationAttribute
+    public class CaptchaValidator : ValidationAttribute
     {
-        public string GetErrorMessage2() =>
-            $"Please check Is Finished";
+        public string GetErrorMessage3() =>
+            $"Incorrect value";
+
 
         protected override ValidationResult IsValid(object value,
             ValidationContext validationContext)
         {
             var item = (TasksToDo)validationContext.ObjectInstance;
 
-            if (!item.IsFinished && item.EndDate != null)
+            if (item.Captcha != 6)
             {
-                return new ValidationResult(GetErrorMessage2());
+                return new ValidationResult(GetErrorMessage3());
             }
 
             return ValidationResult.Success;
