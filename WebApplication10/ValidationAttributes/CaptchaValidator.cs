@@ -11,19 +11,18 @@ namespace WebApplication10.ValidationAttributes
     {
         public string GetErrorMessage3() =>
             $"Incorrect value";
-
-
+      
         protected override ValidationResult IsValid(object value,
             ValidationContext validationContext)
         {
             var item = (TasksToDo)validationContext.ObjectInstance;
-
-            if (item.Captcha != 6)
+            int a = item.Captcha / 10;
+            int b = item.Captcha % 10;
+            if (a + b == 6)
             {
-                return new ValidationResult(GetErrorMessage3());
+                return ValidationResult.Success;
             }
-
-            return ValidationResult.Success;
-        }
+                return new ValidationResult(GetErrorMessage3());
     }
+}
 }
