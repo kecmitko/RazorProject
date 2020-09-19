@@ -16,13 +16,18 @@ namespace WebApplication10.ValidationAttributes
             ValidationContext validationContext)
         {
             var item = (TasksToDo)validationContext.ObjectInstance;
-            int a = item.Captcha / 10;
-            int b = item.Captcha % 10;
-            if (a + b == 6)
+            var charString = item.Captcha.ToString().ToCharArray();
+            var sum = 0;
+            int i = 0;
+            while (i < charString.Length)
             {
-                return ValidationResult.Success;
+                int num = Convert.ToInt32(charString[i]);
+                sum += num;
+                i++;
+                if (sum % 6 == 0)
+                    return ValidationResult.Success;
             }
-                return new ValidationResult(GetErrorMessage3());
+            return new ValidationResult(GetErrorMessage3());
+        }
     }
-}
 }
