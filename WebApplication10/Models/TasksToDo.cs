@@ -32,16 +32,13 @@ namespace WebApplication10.Models
 
 
 
-        [CreditCard]// atribut za kreditna karticka
-        [Required]
-        public string CreditCard { get; set; }
+        //[CreditCard]// atribut za kreditna karticka
+        //[Required]
+        //public string CreditCard { get; set; }
 
         [EmailAddress]//atribut za validacija na Email 
         [Remote(action: "VerifyEmail", controller: "TasksToDo")]//validator koj povikuva Akcija na server...
         public string Email { get; set; }
-
- 
-
 
 
         [Required(ErrorMessage = "Password required")]
@@ -58,11 +55,11 @@ namespace WebApplication10.Models
         [Compare("Password", ErrorMessage = "Error : Confirm password does not match with password")]
         public string ConfirmPassword { get; set; }
 
+        [Required(ErrorMessage = "Captcha validation is required.")]
+        [CaptchaValidator]
+        public int Captcha { get; set; }
+
 
 
     }
-
-
-
-
 }
