@@ -113,16 +113,20 @@ namespace WebApplication10.Controllers
             return View("List", _tasks);
         }
 
+
+
+        //Ovoj method se povikuva pri validiranje na email poleto. 
+        //Najcesto se koristi za proverka na postoecki email (dali e veke nekoj registriran so vakov email)
         [AcceptVerbs("GET", "POST")]
         public IActionResult VerifyEmail(string email)
         {
-            if (email == "test@gmail.com")
+            if (email == "test@gmail.com")// vo ovoj slucaj dava "false" i poraka samo za ""test@gmail.com"
             {
                 return Json( $@"Email ""{email}"" is 
                                    already in use.");
             }
 
-            return Json(true);
+            return Json(true);//dava "true" za site email-adresi razlicni od  ""test@gmail.com"
         }
 
     }
