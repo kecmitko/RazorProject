@@ -10,7 +10,7 @@ namespace WebApplication10.ValidationAttributes
     public class CaptchaValidator : ValidationAttribute
     {
         public string GetErrorMessage3() =>
-            $"Incorrect value";
+            $"The sum of the digits is not 6";
       
         protected override ValidationResult IsValid(object value,
             ValidationContext validationContext)
