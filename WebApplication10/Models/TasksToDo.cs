@@ -42,7 +42,8 @@ namespace WebApplication10.Models
         [Compare("Password", ErrorMessage = "Error : Confirm password does not match with password")]
         public string ConfirmPassword { get; set; }
 
-
+        //[ImNotRobot]
+        //public int inputValidator { get; set; }
     }
 
 
