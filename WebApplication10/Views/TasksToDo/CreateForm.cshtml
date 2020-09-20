@@ -12,64 +12,71 @@
     <div class="col">
         <form asp-action="Create" method="post">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <div class="form-group row">
-                <label asp-for="RedenBroj" class="control-label col-6"></label>
-                <input asp-for="RedenBroj" class="form-control col-6" />
-                <span asp-validation-for="RedenBroj" class="text-danger offset-6"></span>
-            </div>
-            <div class="form-group row">
-                <label asp-for="Description" class="control-label col-6"></label>
-                <input asp-for="Description" class="form-control col-6" />
-                <span asp-validation-for="Description" class="text-danger offset-6"></span>
-            </div>
-            <div class="form-group row">
-                <label asp-for="StartDate" class="control-label col-6"></label>
-                <input asp-for="StartDate" class="form-control col-6" />
-                <span asp-validation-for="StartDate" class="text-danger offset-6"></span>
-            </div>
-            <div class="form-group row">
-                <label asp-for="EndDate" class="control-label col-6"></label>
-                <input asp-for="EndDate" class="form-control col-6" />
-                <span asp-validation-for="EndDate" class="text-danger offset-6"></span>
-            </div>
-            <div class="form-group form-check row">
-                <label class="form-check-label col-6" asp-for="IsFinished">
-                    <input class="form-check-input col-6" asp-for="IsFinished" /> @Html.DisplayNameFor(model => model.IsFinished)
-                </label>
-                <span asp-validation-for="IsFinished" class="text-danger offset-6"></span>
-            </div>
-            <div class="form-group row">
-                <label asp-for="NumberOfHours" class="control-label col-6"></label>
-                <input asp-for="NumberOfHours" class="form-control col-6" />
-                <span asp-validation-for="NumberOfHours" class="text-danger offset-6"></span>
-            </div>
-            <div class="form-group row">
-                <label asp-for="Email" class="control-label col-6"></label>
-                <input asp-for="Email" class="form-control col-6" />
-                <span asp-validation-for="Email" class="text-danger offset-6"></span>
-            </div>
-            <div class="form-group row">
-                <label asp-for="Card" class="control-label col-6"></label>
-                <input asp-for="Card" class="form-control col-6" />
-                <span asp-validation-for="Card" class="text-danger offset-6"></span>
-            </div>
-            <div class="form-group row">
-                <label asp-for="Password" class="control-label col-6"></label>
-                <input asp-for="Password" class="form-control col-6" />
-                <span asp-validation-for="Password" class="text-danger offset-6"></span>
-            </div>
-            <div class="form-group row">
-                <label asp-for="ConfirmPassword" class="control-label col-6"></label>
-                <input asp-for="ConfirmPassword" class="form-control col-6" />
-                <span asp-validation-for="ConfirmPassword" class="text-danger offset-6"></span>
-            </div>
-            <div class="form-group row">
-                <label asp-for="inputValidator" class="control-label col-6"></label>
-                <input asp-for="inputValidator" class="form-control col-6" />
-                <span asp-validation-for="inputValidator" class="text-danger offset-6"></span>
-            </div>
-            <div class="form-group d-flex justify-content-center">
-                <input type="submit" value="Create" class="btn btn-primary" />
+            <div class="row">
+                <div class="col-6">
+                    <div class="form-group row">
+                        <label asp-for="RedenBroj" class="control-label offset-2 col-4"></label>
+                        <input asp-for="RedenBroj" class="form-control col-6" />
+                        <span asp-validation-for="RedenBroj" class="text-danger offset-6"></span>
+                    </div>
+                    <div class="form-group row">
+                        <label asp-for="Description" class="control-label offset-2 col-4"></label>
+                        <input asp-for="Description" class="form-control col-6" />
+                        <span asp-validation-for="Description" class="text-danger offset-6"></span>
+                    </div>
+                    <div class="form-group row">
+                        <label asp-for="StartDate" class="control-label offset-2 col-4"></label>
+                        <input asp-for="StartDate" class="form-control col-6" />
+                        <span asp-validation-for="StartDate" class="text-danger offset-6"></span>
+                    </div>
+                    <div class="form-group row">
+                        <label asp-for="EndDate" class="control-label offset-2 col-4"></label>
+                        <input asp-for="EndDate" class="form-control col-6" />
+                        <span asp-validation-for="EndDate" class="text-danger offset-6"></span>
+                    </div>
+                    <div class="form-group form-check row">
+                        <label class="form-check-label offset-2 col-4" asp-for="IsFinished">
+
+                        </label>
+                        <input class="form-check-input col-6" asp-for="IsFinished" /> 
+                        <span asp-validation-for="IsFinished" class="text-danger offset-6"></span>
+                    </div>
+                    <div class="form-group row">
+                        <label asp-for="NumberOfHours" class="control-label offset-2 col-4"></label>
+                        <input asp-for="NumberOfHours" class="form-control col-6" />
+                        <span asp-validation-for="NumberOfHours" class="text-danger offset-6"></span>
+                    </div>
+                </div>
+                <div class="col-6">
+                    <div class="form-group row">
+                        <label asp-for="Email" class="control-label offset-2 col-4"></label>
+                        <input asp-for="Email" class="form-control col-6" />
+                        <span asp-validation-for="Email" class="text-danger offset-6"></span>
+                    </div>
+                    <div class="form-group row">
+                        <label asp-for="Card" class="control-label offset-2 col-4"></label>
+                        <input asp-for="Card" class="form-control col-6" />
+                        <span asp-validation-for="Card" class="text-danger offset-6"></span>
+                    </div>
+                    <div class="form-group row">
+                        <label asp-for="Password" class="control-label offset-2 col-4"></label>
+                        <input asp-for="Password" class="form-control col-6" />
+                        <span asp-validation-for="Password" class="text-danger offset-6"></span>
+                    </div>
+                    <div class="form-group row">
+                        <label asp-for="ConfirmPassword" class="control-label offset-2 col-4"></label>
+                        <input asp-for="ConfirmPassword" class="form-control col-6" />
+                        <span asp-validation-for="ConfirmPassword" class="text-danger offset-6"></span>
+                    </div>
+                    <div class="form-group row">
+                        <label asp-for="inputValidator" class="control-label offset-2 col-4"></label>
+                        <input asp-for="inputValidator" class="form-control col-6" />
+                        <span asp-validation-for="inputValidator" class="text-danger offset-6"></span>
+                    </div>
+                    <div class="form-group d-flex justify-content-center">
+                        <input type="submit" value="Create" class="btn btn-primary" />
+                    </div>
+                </div>
             </div>
         </form>
     </div>
