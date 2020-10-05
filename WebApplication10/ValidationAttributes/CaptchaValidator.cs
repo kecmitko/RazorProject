@@ -15,6 +15,13 @@ namespace WebApplication10.ValidationAttributes
         protected override ValidationResult IsValid(object value,
             ValidationContext validationContext)
         {
+
+            //var numSum = value.ToString(). //"510"
+            //   ToCharArray()     //'5','1','0'
+            //    .ToList()  //<'5','1','0'>
+            //   .Select(x => int.Parse(x.ToString()))
+            //   .ToList().Sum();
+
             var item = (TasksToDo)validationContext.ObjectInstance;
             var charString = item.Captcha.ToString().ToCharArray();
             var sum = 0;
